@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['exit',['exit',['../group__coreinit__exit.html#ga7b17e5913b7dff48eec9ba3976ccfd3c',1,'exit.h']]]
+  ['exit_4146',['exit',['../group__coreinit__exit.html#ga1bea020c0df7a202302bd1b1d8ea8788',1,'exit.h']]]
 ];
