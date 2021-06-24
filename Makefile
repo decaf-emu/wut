@@ -35,7 +35,7 @@ INCLUDES	:=	include \
 #---------------------------------------------------------------------------------
 # options for code generation
 #---------------------------------------------------------------------------------
-CFLAGS	:=	-g -Wall -Werror -save-temps \
+CFLAGS	:=	-Wall -Werror -pipe \
 			-ffunction-sections -fdata-sections \
 			$(MACHDEP) \
 			$(BUILD_CFLAGS)
@@ -121,7 +121,7 @@ debug:
 
 lib/libwut.a : lib release $(SOURCES) $(INCLUDES)
 	@$(MAKE) BUILD=release OUTPUT=$(CURDIR)/$@ \
-	BUILD_CFLAGS="-DNDEBUG=1 -O2" \
+	BUILD_CFLAGS="-DNDEBUG=1 -O2 -flto=auto -ffat-lto-objects -fuse-linker-plugin" \
 	DEPSDIR=$(CURDIR)/release \
 	--no-print-directory -C release \
 	-f $(CURDIR)/Makefile
